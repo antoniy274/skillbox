@@ -8,7 +8,7 @@ int main()
     std::cin >> way;
 
     std::ifstream fout;
-    fout.open("way", std::ios::binary);
+    fout.open(way, std::ios::binary);
     //fout.open("words.txt");
     
     if (fout.is_open()) {
