@@ -3,13 +3,13 @@
 
 int main()
 {
-    /*std::string way;
+    std::string way;
     std::cout << "Enter way to file: ";
-    std::cin >> way;*/
+    std::cin >> way;
 
     std::ifstream fout;
-    fout.open("way", std::ios::binary);
-    //fout.open("words.txt");
+    fout.open(way, std::ios::binary);
+    //fout.open("words.txt", std::ios::binary);
     
     if (fout.is_open()) {
         while (!fout.eof()) {
