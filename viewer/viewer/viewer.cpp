@@ -9,7 +9,7 @@ int main()
 
     std::ifstream fout;
     fout.open(way, std::ios::binary);
-    //fout.open("words.txt", std::ios::binary);
+    //fout.open("words.txt");
     
     if (fout.is_open()) {
         while (!fout.eof()) {
