@@ -1,0 +1,24 @@
+All organisms have their own specialized patterns like face appearances. 
+The molecular patterns are grasped by specific pattern-understanding molecules called pattern recognition receptors (PRRs). 
+Likewise, pathogen-related stimuli are recognized through the specific transmembrane receptors of the host cells, 
+PRRs, present on the cell surfaces of adaptive and innate immune systems in hosts. 
+PRRs are responsible for sensing the incidence of any cell damage as well as the presence of infecting microorganisms. 
+So, they recognize endogenous molecules derived from cellular damages or internal injuries, called DAMPs, 
+as well as evolution-based structures surfaced on microbes, termed PAMPs. CTL or CLR is a pathogen and antigen receptor on DCs. 
+DCs are specially recognize pathogens in the regulation of immune responses to protect the host from external environments. 
+DCs are also engaged in homoeostatic regulation, recognizing self-antigens to allow tolerance from the tissue environment. 
+Therefore, one question is how the nature of the recognized antigens takes the balance between immunity and tolerance. 
+CLRs expressed on DCs substantially recognize and bind glycosylated self-antigens and pathogens. 
+It is currently becoming deciphered that the CLRs serve as antigen receptors potentiating internalization to present antigens 
+and as recognition receptors of glycosylated self-antigens to function as adhesion and signaling molecules. 
+Thus, C-type lectins are accurately expressed depending on maturation stimuli. 
+One of the well-known CLRs represent DC-SIGN that recognizes high-mannose types and Lewis antigens of Lex, LeY, LeB, and LeA. 
+Another CLR, macrophage Gal and GalNAc-specific C-type lectin (MGL) recognizes GalNAc. 
+From the fact that the glycan structures of antigenic epitope enhance MHC-I responses and the antigen-reactive CTLs’ functions, 
+it is considered that glycosylated antigen specifically interacts with C-type lectin to induce antigen-specific T-cell functions. 
+Consequently, C-type lectin-recognized antigens can regulate T-cell polarization. 
+The CLRs stimulate DCs signaling events with TLR activation. 
+Understanding the CTLs on DCs and the carbohydrate-specific recognition structures of 
+DCs will greatly help us to comprehend pathogen recognition in diseases. 
+In addition, because tissue tumors frequently express LeX LeY and GalNAc glycan structures, 
+the information can also help to understand how DCs regulate cellular tumor immunity through cellular interactions.
