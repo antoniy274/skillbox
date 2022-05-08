@@ -3,9 +3,9 @@
 
 int main()
 {
-    /*std::string way;
+    std::string way;
     std::cout << "Enter way to file: ";
-    std::cin >> way;*/
+    std::cin >> way;
 
     std::ifstream fout;
     fout.open("way", std::ios::binary);
