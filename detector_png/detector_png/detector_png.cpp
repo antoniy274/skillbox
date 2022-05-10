@@ -8,7 +8,7 @@ int main()
     std::string path;
     std::cout << "Enter file path: ";
     std::cin >> path;
-    if (path.substr(path.size() - 4, path.size()) == ".png") {
+    if (path.substr(path.size() - 4,4) == ".png") {
         fout.open(path, std::ios::binary);
         if (fout.is_open()) {
             char buffer[5];
