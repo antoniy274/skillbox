@@ -59,11 +59,8 @@ int main() {
             }
             position += offset;
         }
-
-        questionsPath = "C:\\Users\\anton\\Desktop\\skillbox\\game_What_Where_When\\Questions\\"
-            + to_string(position) + ".txt";
-        answersPath = "C:\\Users\\anton\\Desktop\\skillbox\\game_What_Where_When\\Answers"
-            + to_string(position) + ".txt";
+        questionsPath ="Answers\\" + to_string(position) + ".txt";
+        answersPath = "Questions\\" + to_string(position) + ".txt";
 
         questions.open(questionsPath);
         answers.open(answersPath);
