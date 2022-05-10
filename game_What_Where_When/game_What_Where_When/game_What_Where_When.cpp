@@ -50,18 +50,14 @@ int main() {
         cout << "Current position is " << position << endl;
         cout << "Enter the offset:";
         cin >> offset;
-        if (position + offset == 13) {
+        if (offset <= 12) {
             position += offset;
         }
         else {
-            position = (position + offset) % 13;
-            if (position == 0) position = 13;
-        }
-
-        while (!sectors[position - 1]) {
-            if (++position > 13) {
-                position = 1;
+            while (offset > 12) {
+                offset -= 12;
             }
+            position += offset;
         }
 
         questionsPath = "C:\\Users\\anton\\Desktop\\skillbox\\game_What_Where_When\\Questions\\"
