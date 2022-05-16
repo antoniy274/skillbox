@@ -1,7 +1,6 @@
 ﻿#include <ctime>
 #include <iostream>
 #include <fstream>
-#include <vector>
 
 int main()
 {
@@ -13,7 +12,6 @@ int main()
     std::ofstream file("pic.txt");
     file.clear();
     
-    std::vector <int> picture[1][1];
     for (int i = 0; i < height; ++i) {
         for (int j = 0; j < width; ++j) {
             int a = std::rand() % 2;
