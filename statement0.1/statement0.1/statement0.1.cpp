@@ -23,11 +23,5 @@ int main()
 bool correct_date(std::string date)
 {
     int month = std::stoi(date.substr(3, 2));
-    if (month < 0 and month > 12) {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
+    return month < 0 and month > 12;
 }
