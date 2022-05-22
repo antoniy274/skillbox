@@ -10,13 +10,18 @@ int main()
     std::cin >> height >> width;
 
     std::ofstream file("pic.txt");
-    file.clear();
-    
-    for (int i = 0; i < height; ++i) {
-        for (int j = 0; j < width; ++j) {
-            file << std::rand() % 2;
-        }
-        file << "\n";
+    if (!file.is_open()) {
+        std::cerr << "Error. File is not open";
     }
-    file.close();
+    else {
+        file.clear();
+
+        for (int i = 0; i < height; ++i) {
+            for (int j = 0; j < width; ++j) {
+                file << std::rand() % 2;
+            }
+            file << "\n";
+        }
+        file.close();
+    }
 }
