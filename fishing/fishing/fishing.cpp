@@ -10,7 +10,7 @@ int main()
     file_write.open("basket.txt", std::ios::app);
     std::string fish;
 
-    if (!file_read.is_open()) {
+    if (!file_read.is_open() || !file_write.is_open()) {
         std::cout << "File fish is not open";
     }
     else {
