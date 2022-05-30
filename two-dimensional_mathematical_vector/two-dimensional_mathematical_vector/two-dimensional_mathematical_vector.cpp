@@ -27,6 +27,7 @@ int main()
         TDMV b;
         std::cin >> b.x >> b.y;
         add(a, b);
+        std::cout << "The sum of a and b is " << a.x << " " << a.y;
     }
     else if(answer == "subtract"){
         std::cout << "Enter the coordinate of the first vector: ";
@@ -36,6 +37,7 @@ int main()
         TDMV b;
         std::cin >> b.x >> b.y;
         subtract(a, b);
+        std::cout << "The difference between a and b is " << a.x << " " << a.y;
     }
     else if (answer == "scale") {
         std::cout << "Enter the coordinate of the first vector: ";
@@ -45,6 +47,7 @@ int main()
         double b;
         std::cin >> b;
         scale(a, b);
+        std::cout << "Multiplication of a vector by a scalar " << a.x << " " << a.y;
     }
     else if (answer == "length") {
         std::cout << "Enter the coordinate of the vector: ";
@@ -57,6 +60,7 @@ int main()
         TDMV a;
         std::cin >> a.x >> a.y;
         normalize(a);
+        std::cout << "Vector normalization " << a.x << " " << a.y;
     }
     else {
         std::cout << "Wrong command";
@@ -66,19 +70,16 @@ int main()
 void add(TDMV &a, TDMV b) {
     a.x += b.x;
     a.y += b.y;
-    std::cout << "The sum of a and b is " << a.x << " " << a.y;
 }
 
 void subtract(TDMV &a, TDMV b) {
     a.x -= b.x;
     a.y -= b.y;
-    std::cout << "The difference between a and b is " << a.x << " " << a.y;
 }
 
 void  scale(TDMV &a, double b) {
     a.x *= b;
     a.y *= b;
-    std::cout << "Multiplication of a vector by a scalar " << a.x << " " << a.y;
 }
 
 double length(TDMV a) {
@@ -91,5 +92,4 @@ double length(TDMV a) {
 void  normalize(TDMV &a) {
     a.x /= length(a);
     a.y /= length(a);
-    std::cout << "Vector normalization " << a.x << " " << a.y;
 }
