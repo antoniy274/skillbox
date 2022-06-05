@@ -11,11 +11,12 @@ struct ACTOR {
     int damage;
     int x;
     int y;
+    bool is_dead;
 };
 
 void show(char field[][20], std::vector<ACTOR> Enemy, ACTOR personage);
 void step_enemy(char field[][20], std::vector<ACTOR> &Enemy);
-bool win(char field[][20]);
+bool win(std::vector<ACTOR>& Enemy);
 void attack(char field[][20], std::vector<ACTOR>& Enemy, ACTOR personage);
 
 int main()
@@ -33,6 +34,7 @@ int main()
     std::cin >> personage.damage;
     personage.x = (rand() % 20);
     personage.y = (rand() % 20);
+    personage.is_dead = false;
 
     std::vector<ACTOR> Enemy;
     for (int i = 0; i < 5; ++i) {
@@ -43,13 +45,14 @@ int main()
         enemy.damage = rand() % 16 + 15;
         enemy.x = (rand() % 20);
         enemy.y = (rand() % 20);
+        enemy.is_dead = false;
         Enemy.push_back(enemy);
     }
 
     char field[20][20];
     show(field, Enemy, personage);
 
-    while (win(field))
+    while (win(Enemy))
     {
         std::cout << "x: " << personage.x << " " << "y: " << personage.y << "\n";
         std::cout << "Enter command: ";
@@ -86,7 +89,7 @@ void show(char field[][20], std::vector<ACTOR> Enemy, ACTOR personage) {
     for (int i = 0; i < Enemy.size(); ++i) {
         for (int y = 0; y < 20; ++y) {
             for (int x = 0; x < 20; ++x) {
-                if (Enemy[i].y == y && Enemy[i].x == x) {
+                if (Enemy[i].y == y && Enemy[i].x == x && Enemy[i].is_dead != true) {
                     field[y][x] = 'E';
                 }
             }
@@ -129,20 +132,19 @@ void attack(char field[][20], std::vector<ACTOR> &Enemy, ACTOR personage) {
         for (int y = 0; y < 20; ++y) {
             for (int x = 0; x < 20; ++x) {
                 if (Enemy[i].x == personage.x and Enemy[i].y == personage.y) {
-                    Enemy.erase(Enemy.begin() + i);
+                    Enemy[i].is_dead = true;
                 }
             }
         }
     }
 }
 
-bool win(char field[][20]) {
-    bool result = false;
-    for (int y = 0; y < 20; ++y) {
-        for (int x = 0; x < 20; ++x) {
-            if (field[y][x] == '.' || field[y][x] == 'P') {
-                result = true;
-            }
+bool win(std::vector<ACTOR>& Enemy) {
+    bool result = true;
+    for (int i = 0; i < 5; ++i) {
+        if (Enemy[i].is_dead == true) {
+            result = false;
+            break;
         }
     }
     return result;
