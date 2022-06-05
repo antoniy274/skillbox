@@ -11,7 +11,7 @@ struct statement {
 
 bool correct_date(std::string str);
 void save_statement(std::ofstream& file, statement& salary);
-void load_statement(std::ifstream& file, statement& salary);
+void load_statement(std::ifstream& file);
 
 int main()
 {
@@ -25,19 +25,17 @@ int main()
             std::cout << "Error. File is not open";
         }
         else {
-            std::cout << "Enter name, surname, date, salary, currency in file";
+            std::cout << "Enter name, surname, date, salary in file";
             std::cout << "\nEnter 0 for quit\n";
 
             while (std::cin >> salary.name)
             {
                 if (salary.name == "0") break;
                 std::cin >> salary.surname >> salary.date >> salary.money;
-                // Почему не работает??
-                /*if (!correct_date(salary.date)) {
+                if (!correct_date(salary.date)) {
                     std::cout << "Error. Date is incorrect\n";
                     continue;
-                }*/
-                //std::cout << std::stoi(salary.date.substr(3, 2));
+                }
                 save_statement(file, salary);
             }
             file.close();
@@ -50,7 +48,7 @@ int main()
 
         if (file_read.is_open()) {
             while (!file_read.eof()) {
-                load_statement(file_read, salary);
+                load_statement(file_read);
             }
         }
         else {
@@ -66,7 +64,11 @@ int main()
 bool correct_date(std::string date)
 {
     int month = std::stoi(date.substr(3, 2));
-    return month < 0 and month > 12;
+    if (month > 0 && month < 13) {
+        return true;
+    }
+    else
+        return false;
 }
 
 void save_statement(std::ofstream& file, statement& salary) {
@@ -83,7 +85,7 @@ void save_statement(std::ofstream& file, statement& salary) {
     file << salary.name << " " << salary.surname << " " << salary.date << " " << salary.money << "\n";
 }
 
-void load_statement(std::ifstream& file, statement& salary) {
+void load_statement(std::ifstream& file) {
     /*int len_name;
     file.read((char*)&len_name, sizeof(len_name));
     salary.name.resize(len_name);
@@ -101,9 +103,9 @@ void load_statement(std::ifstream& file, statement& salary) {
     
     file.read((char*)&salary.money, sizeof(salary.money));*/
     
-
+    statement salary;
     file >> salary.name >> salary.surname >> salary.date >> salary.money;
-    if (!file.gcount()) {
+    if (salary.name.size()>0) {
         std::cout << salary.name << " " << salary.surname << " " << salary.date << " " << salary.money << "\n";
     }
 }
