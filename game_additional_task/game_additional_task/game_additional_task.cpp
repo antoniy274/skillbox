@@ -89,7 +89,7 @@ void show(char field[][20], std::vector<ACTOR> Enemy, ACTOR personage) {
     for (int i = 0; i < Enemy.size(); ++i) {
         for (int y = 0; y < 20; ++y) {
             for (int x = 0; x < 20; ++x) {
-                if (Enemy[i].y == y && Enemy[i].x == x && Enemy[i].is_dead != true) {
+                if (Enemy[i].y == y && Enemy[i].x == x && Enemy[i].is_dead == false) {
                     field[y][x] = 'E';
                 }
             }

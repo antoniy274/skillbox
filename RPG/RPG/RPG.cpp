@@ -87,29 +87,24 @@ int foundCharacterIndex(int x, int y, vector<Character>& characters) {
     return -1;
 }
 
-vector<int> enemyCoordinates(Character player, int direction) {
-    vector<int> coordinates(2);
+Character::Coordinates enemyCoordinates(Character player, int direction) {
     switch (direction) {
     case LEFT:
-        coordinates[0] = player.coordinates.x - 1;
-        coordinates[1] = player.coordinates.y;
+        player.coordinates.x -= 1;
         break;
     case TOP:
-        coordinates[0] = player.coordinates.x;
-        coordinates[1] = player.coordinates.y - 1;
+        player.coordinates.y -= 1;
         break;
     case RIGHT:
-        coordinates[0] = player.coordinates.x + 1;
-        coordinates[1] = player.coordinates.y;
+        player.coordinates.x += 1;
         break;
     case BOTTOM:
-        coordinates[0] = player.coordinates.x;
-        coordinates[1] = player.coordinates.y + 1;
+        player.coordinates.y += 1;
         break;
     default:
         break;
     }
-    return coordinates;
+    return player.coordinates;
 }
 
 bool isInputRight(string str) {
@@ -134,12 +129,7 @@ void damageCalculation(Character& attacker, Character& defender) {
 }
 
 bool isDead(Character& character) {
-    if (character.health <= 0) {
-        return true;
-    }
-    else {
-        return false;
-    }
+    return character.health <= 0;
 }
 
 bool isEndOfMapReached(int direction, Character character) {
@@ -383,7 +373,7 @@ int main() {
                 move(characters[0], direction);
             }
             else {
-                vector<int> coord = enemyCoordinates(characters[0], direction);
+                Character::Coordinates coord = enemyCoordinates(characters[0], direction);
                 int enemyIndex = foundCharacterIndex(coord[0], coord[1], characters);
                 playerAttack(characters[0], characters[enemyIndex]);
                 if (isDead(characters[enemyIndex])) {
