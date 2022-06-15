@@ -374,7 +374,7 @@ int main() {
             }
             else {
                 Character::Coordinates coord = enemyCoordinates(characters[0], direction);
-                int enemyIndex = foundCharacterIndex(coord[0], coord[1], characters);
+                int enemyIndex = foundCharacterIndex(coord.x, coord.y, characters);
                 playerAttack(characters[0], characters[enemyIndex]);
                 if (isDead(characters[enemyIndex])) {
                     cout << characters[enemyIndex].name << " has been slain" << endl;
