@@ -10,8 +10,12 @@ int main() {
     while (getline(cin, input)) {
         if (input == "Next") {
             auto item = patients.begin();
-            cout << item->first << endl;
-            if (--item->second == 0) patients.erase(patients.begin());
+            if (item->first.size() > 0) {
+                cout << item->first << endl;
+                if (--item->second == 0) patients.erase(patients.begin());
+            }
+            else
+                std::cout << "Error" << " Map is null\n";
         }
         else {
             if (patients.find(input) == patients.end()) patients.insert(make_pair(input, 1));
