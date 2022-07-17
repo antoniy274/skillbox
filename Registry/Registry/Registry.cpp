@@ -10,7 +10,7 @@ int main() {
     while (getline(cin, input)) {
         if (input == "Next") {
             auto item = patients.begin();
-            if (item->first.size() > 0) {
+            if (item != patients.end()) {
                 cout << item->first << endl;
                 if (--item->second == 0) patients.erase(patients.begin());
             }

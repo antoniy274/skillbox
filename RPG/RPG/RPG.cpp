@@ -29,7 +29,6 @@ enum Directions {
 
 
 void printGameMap(vector<Character> characters) {
-    char GameMap[40][40];
     cout << " ";
     for (int i = 0; i < 40; i++)
     {
@@ -43,7 +42,7 @@ void printGameMap(vector<Character> characters) {
         {
             if (j == characters[0].coordinates.x && i == characters[0].coordinates.y) {
                 cout << "P";
-                GameMap[i][j] = 'P';
+
             }
             else {
                 bool f = false;
@@ -51,14 +50,12 @@ void printGameMap(vector<Character> characters) {
                 {
                     if (j == characters[k].coordinates.x && i == characters[k].coordinates.y) {
                         cout << "E";
-                        GameMap[i][j] = 'E';
                         f = true;
                         break;
                     }
                 }
                 if (!f) {
                     cout << ".";
-                    GameMap[i][j] = '.';
                 }
             }
         }
