@@ -1,10 +1,10 @@
-﻿# CMakeList.txt: проект CMake для OpSimulator; включите исходный код и определения,
-# укажите здесь логику для конкретного проекта.
-#
+﻿
 cmake_minimum_required (VERSION 3.8)
-project(OpSimulator VERSION 1.0)
+//project(OpSimulator VERSION 1.0)
 
-# Добавьте источник в исполн"src/OpSimulator.cpp"проекта.
-add_executable (OpSimulator OpSimulator.cpp ../include/OpSimulator.h)
+//set(CMAKE_CXX_STANDARD 14)
 
-# TODO: Добавьте тесты и целевые объекты, если это необходимо.
+//set(MY_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/include})
+
+add_executable (OpSimulator OpSimulator.cpp ${MY_INCLUDE_DIR}/OpSimulator.h)
+target_include_directories(OpSimulator PUBLIC ${MY_INCLUDE_DIR})

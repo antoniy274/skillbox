@@ -10,7 +10,7 @@ int main()
 	bool operationIsStarted = false;
 	bool operationIsEnded = false;
 	
-	OperationsSimulator OperationBegin;
+	OperationsSimulator OperationBegin(0.0, 0.0);
 
 	while (!operationIsEnded) {
 		cout << "Enter a command [scalpel | hemostat | tweezers | suture]:\n";
