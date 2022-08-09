@@ -3,7 +3,7 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("Operations_Simulator")
+project ("PC_Simulator")
 
 # Включите подпроекты.
-add_subdirectory ("Operations_Simulator")
+add_subdirectory ("PC_Simulator")

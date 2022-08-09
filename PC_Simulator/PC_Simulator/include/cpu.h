@@ -3,4 +3,3 @@
 #include <vector>
 
 void compute();
-

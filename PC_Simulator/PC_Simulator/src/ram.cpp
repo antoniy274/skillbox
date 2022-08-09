@@ -12,5 +12,3 @@ void write(std::vector<int> newBuffer) {
         buffer[i] = newBuffer[i];
     }
 }
-
-

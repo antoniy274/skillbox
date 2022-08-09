@@ -4,7 +4,7 @@
 
 void compute() {
     int count = 0;
-    for (auto & i : read()) {
+    for (auto& i : read()) {
         count += i;
     }
     std::cout << count << std::endl;

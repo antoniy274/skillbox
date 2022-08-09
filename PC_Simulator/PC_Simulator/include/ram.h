@@ -5,4 +5,3 @@
 std::vector<int> read();
 
 void write(std::vector<int> newBuffer);
-

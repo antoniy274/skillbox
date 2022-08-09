@@ -3,7 +3,7 @@
 #include "..\include\ram.h"
 
 void display() {
-    for (auto & i : read()) {
+    for (auto& i : read()) {
         std::cout << i << std::endl;
     }
 }
