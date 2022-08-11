@@ -3,6 +3,8 @@
 #include <fstream>
 #include <string>
 
+AudioPlayer::AudioPlayer() {};
+
 void AudioPlayer:: play(AudioPlayer* audioPlayer) {
 	
 	if (audioPlayer->command != "play") {
