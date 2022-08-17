@@ -2,27 +2,48 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <ctime>
+#include <iomanip>
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
 
 AudioPlayer::AudioPlayer() {};
 
-void AudioPlayer:: play(AudioPlayer* audioPlayer) {
+void AudioPlayer:: play(std::string c) {
 	
-	if (audioPlayer->command != "play") {
-		audioPlayer->command = "play";
+	if (c == "play") {
+		command = "play";
 		std::ifstream playList;
-		playList.open("playList.txt");
-		while (!playList.eof())
-		{
-			if (playList.is_open()) {
-				playList >> audioPlayer->track >> audioPlayer->authorauthor >> audioPlayer->timeTrack;
-				while (audioPlayer->timeTrack != 0) {
-					std::cout<< audioPlayer->track << audioPlayer->author << audioPlayer->timeTrack;
-					audioPlayer->timeTrack // отнимать секунды
+		playList.open("C:\\Users\\anton\\Desktop\\skillbox\\audio_player\\audio_player\\playList.txt");
+
+		if (playList.is_open()) {
+			while (!playList.eof())
+			{
+				playList >> track >> author >> std::get_time(&timeTrack, "%M:%S");
+				
+				time_t currentTime = time(nullptr);
+				time_t targetTime = currentTime + timeTrack.tm_min * 60 + timeTrack.tm_sec;
+
+				while (currentTime != targetTime) {
+					time_t diff = targetTime - currentTime;
+					currentTime = time(nullptr);
+					if (currentTime + diff != targetTime) {
+						int newDiff = targetTime - currentTime;
+						int minutes = newDiff / 60;
+						int seconds = newDiff % 60;
+						std::cout << track << ' ' << author << ' ';
+						std::cout << minutes << ":" << seconds / 10 << seconds % 10 << '\n';
+						continue;
+					}
 				}
 			}
-			else
-				std::cout << "Playlist not open";
 		}
+		else
+			std::cout << "Playlist not open";
 		playList.close();
 	}
 }

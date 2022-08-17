@@ -3,7 +3,7 @@
 #include <iostream>
 #include <string>
 
-class AudioPlayer{
+class AudioPlayer {
 private:
 	std::string track;
 	std::string author;
@@ -11,9 +11,9 @@ private:
 	std::string command;
 public:
 	AudioPlayer();
-	void play(AudioPlayer* audioPlayer);
-	void pause(AudioPlayer* audioPlayer);
-	void next(AudioPlayer* audioPlayer);
-	void stop(AudioPlayer* audioPlayer);
-	void exit(AudioPlayer* audioPlayer);
-}
+	void play(std::string c);
+	void pause();
+	void next();
+	void stop();
+	void exit();
+};

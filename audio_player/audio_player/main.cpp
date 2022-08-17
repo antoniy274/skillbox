@@ -1,11 +1,16 @@
-﻿#include "audio_player.h"
-#include <iostream>
+﻿#include <iostream>
 #include <string>
-using namespace std;
+#include <fstream>
+#include "audio_player.h"
+//using namespace std;
 
 int main()
 {
 	AudioPlayer audioPlayer;
-	audioPlayer.play(audioPlayer);
+	std::string c; //= "play";
+	while (std::cin >> c && c != "exit") {
+		audioPlayer.play(c);
+	}
+	audioPlayer.play(c);
 	//cout << "What is bag???";
 }

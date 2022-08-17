@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (audio_player "main.cpp" "audio_player.h")
+add_executable (audio_player "main.cpp" "audio_player.cpp" "audio_player.h")
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
