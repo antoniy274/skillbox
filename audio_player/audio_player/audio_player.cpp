@@ -44,9 +44,11 @@ void AudioPlayer:: play(std::string c) {
 	}
 }
 
-void pause(std::string c) {
+void AudioPlayer:: pause(std::string c) {
 	if (c == "pause") {
 		std::cout << "Pause\n";
-		std::cout << track << ' ' << author << ' ' << targetTime;
+		std::cout << track << ' ' << author;
+		//остановить поток
 	}
 }
+
