@@ -43,3 +43,10 @@ void AudioPlayer:: play(std::string c) {
 		playList.close();
 	}
 }
+
+void pause(std::string c) {
+	if (c == "pause") {
+		std::cout << "Pause\n";
+		std::cout << track << ' ' << author << ' ' << targetTime;
+	}
+}

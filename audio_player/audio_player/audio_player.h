@@ -12,7 +12,7 @@ private:
 public:
 	AudioPlayer();
 	void play(std::string c);
-	void pause();
+	void pause(std::string c);
 	void next();
 	void stop();
 	void exit();
