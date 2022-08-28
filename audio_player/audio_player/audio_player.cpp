@@ -52,3 +52,6 @@ void AudioPlayer:: pause(std::string c) {
 	}
 }
 
+void AudioPlayer::next(std::string c) {
+
+}
