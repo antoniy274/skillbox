@@ -8,19 +8,10 @@ struct Coordinates {
 const int SCREEN_WIDTH = 80;
 const int SCREEN_HEIGHT = 50;
 
-class Monitor {
-private:
-	char screen[80][50];
-	const int screenWidth = SCREEN_WIDTH;
-	const int screenHeight = SCREEN_HEIGHT;
-public:
-	void display(DesktopWindow window);
-};
-
 class DesktopWindow {
 private:
 	Coordinates coordinates;
-	int weidth;
+	int width;
 	int height;
 public:
 	Coordinates getCoordinates();
@@ -28,4 +19,13 @@ public:
 	int getWeidth();
 	void move();
 	void resize();
+};
+
+class Monitor {
+private:
+	char screen[80][50];
+	const int screenWidth = SCREEN_WIDTH;
+	const int screenHeight = SCREEN_HEIGHT;
+public:
+	void display(DesktopWindow window);
 };

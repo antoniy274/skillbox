@@ -8,11 +8,11 @@ Coordinates DesktopWindow::getCoordinates() {
 }
 
 int DesktopWindow::getHeight() {
-	return height
+    return height;
 }
 
 int DesktopWindow::getWeidth() {
-	return getWeidth
+    return width;
 }
 
 void DesktopWindow::move() {
