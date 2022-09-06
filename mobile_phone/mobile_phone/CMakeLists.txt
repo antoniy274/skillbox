@@ -3,6 +3,8 @@
 #
 cmake_minimum_required (VERSION 3.8)
 
+set(CMAKE_CXX_STANDARD 11)
+
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (mobile_phone "main.cpp" "mobile_phone.h" "mobile_phone.cpp")
 
