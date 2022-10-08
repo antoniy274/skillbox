@@ -3,12 +3,12 @@
 #include <iostream>
 #include <string>
 
-enum Collor {
-	RED = 1,
-	BLUE,
-	GREEN,
-	PURPURE,
-	None
+enum Color {
+	NONE,
+	RED = 31,
+	BLUE = 34,
+	GREEN = 32,
+	YELLOW = 33
 };
 
 struct Coordinate
@@ -18,10 +18,43 @@ struct Coordinate
 };
 
 class Figure {
-private:     
+protected:     
 	Coordinate coordinate;
-	int collor = Collor::None;
+	Color color = Color::NONE;
 public:
-	virtual float area() {};
+	virtual void area() {};
 	virtual void outerRectangle() {};
+};
+
+class Circle :public Figure {
+private:
+	float radius = 0.00f;
+public:
+	float area(float R);
+	void outerRectangle(int R, Color color);
+};
+
+class Square :public Figure {
+private:
+	float side = 0.00f;
+public:
+	float area(float a);
+	void outerRectangle(float a, Color color);
+};
+
+class Triangle :public Figure {
+private:
+	float side = 0.00f;
+public:
+	float area(float a);
+	void outerRectangle(float a, Color color);
+};
+
+class Rectangle :public Figure {
+private:
+	float side_a = 0.00f;
+	float side_b = 0.00f;
+public:
+	float area(float a, float b);
+	void outerRectangle(float a, float b, Color color);
 };
