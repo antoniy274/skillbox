@@ -8,7 +8,7 @@ int main()
 {
     std::string answer;
     do {
-        std::cout << "Enter name shape [circle] [square] [triangle] [rectangle]: ";
+        std::cout << "Enter name shape [circle] [square] [triangle] [rectangle] or exit: ";
         std::cin >> answer;
         if (answer == "circle")
         {
