@@ -1,117 +1,92 @@
-﻿#include <cmath>
+﻿#include <iostream>
+#include <cmath>
 #include "geometric_figures.h"
+#include <string>
+void Shape::area()
+{
+    std::cout << "Coordinate " << _coordinatesX << " : " << _coordinatesY << std::endl;
+    std::cout << "Color : ";
+    switch (_color)
+    {
+    case RED:
+        std::cout << "\x1b[31mRED\x1b[0m" << std::endl;
+        break;
+    case BLUE:
+        std::cout << "\x1b[34mBLUE\x1b[0m" << std::endl;
+        break;
+    case GREEN:
+        std::cout << "\x1b[32mGREEN\x1b[0m" << std::endl;
+        break;
+    case YELLOW:
+        std::cout << "\x1b[33mYELLOW\x1b[0m" << std::endl;
+        break;
+    default:
+        std::cout << "Not set" << std::endl;
+        break;
+    }
 
-float Circle::area(float R) {
-	// Пытался найти переменную M_PI, но не смог
-	return (3.14 * pow(R, 2));
 }
 
-void Circle::outerRectangle(int R, Color color) {
+void Shape::rectangleDraw(double a, double b, Color color)
+{
     std::string colors = std::to_string(static_cast<int> (color) + 10);
-    R += 2;
-    int R2 = R * 2;
-    //  std::string colors = std::to_string(static_cast<int> (color) + 10);
-    for (int i = 0; i < R; ++i)
+    b *= 2;
+    for (int i = 0; i < a; ++i)
     {
-        for (int j = 0; j < R2; ++j)
+        for (int j = 0; j < b; ++j)
         {
-            if ((i == 0 && j >= 0) || (i == R - 1 && j >= 0))
+            if ((i == 0 && j >= 0) || (i == a - 1 && j >= 0))
             {
                 std::cout << "-";
             }
-            else if (j == 0 || j == R2 - 1)
+            else if (j == 0 || j == b - 1)
             {
                 std::cout << "|";
             }
-            else {
+            else
+            {
                 std::cout << "\x1b[" + colors + "m \x1b[0m";
             }
+
         }
         std::cout << std::endl;
     }
 }
 
-float Square::area(float side) {
-    float S = pow(side, 2);
-    return S;
+double Circle::area()
+{
+    Shape::area();
+    double diametr = _radius * _radius;
+    double p = PI * diametr;
+    std::cout << "Area circle: " << p << std::endl;
+    Shape::rectangleDraw(diametr, diametr, _color);
+    return p;
 }
 
-void Square::outerRectangle(float Side, Color color) {
-    float side = Side + 2;
-    float side_two = side * 2;
-    std::string colors = std::to_string(static_cast<int> (color) + 10);
-    for (int i = 0; i < side; ++i)
-    {
-        for (int j = 0; j < side_two; ++j)
-        {
-            if ((i == 0 && j >= 0) || (i == side - 1 && j >= 0))
-            {
-                std::cout << "-";
-            }
-            else if (j == 0 || j == side_two - 1)
-            {
-                std::cout << "|";
-            }
-            else {
-                std::cout << "\x1b[" + colors + "m \x1b[0m";
-            }
-        }
-        std::cout << std::endl;
-    }
+double Square::area()
+{
+    Shape::area();
+    double p = _side * _side;
+    std::cout << "Area square: " << p << std::endl;
+    Shape::rectangleDraw(_side, _side, _color);
+    return p;
 }
 
-float Triangle::area(float length) {
-    return length * length * std::sqrt(3) / 4;
+double Triangle::area()
+{
+    const double f = sqrt(3) / 4;
+    Shape::area();
+    double p = f * _side * _side;
+    std::cout << "Area triangle: " << p << std::endl;
+    Shape::rectangleDraw(_side, _side, _color);
+    return p;
 }
 
-void Triangle::outerRectangle(float side, Color color) {
-    side += 2;
-    float side2 = side * 2;
-    std::string colors = std::to_string(static_cast<int> (color) + 10);
-    for (int i = 0; i < side; ++i)
-    {
-        for (int j = 0; j < side2; ++j)
-        {
-            if ((i == 0 && j >= 0) || (i == side - 1 && j >= 0))
-            {
-                std::cout << "-";
-            }
-            else if (j == 0 || j == side2 - 1)
-            {
-                std::cout << "|";
-            }
-            else {
-                std::cout << "\x1b[" + colors + "m \x1b[0m";
-            }
-        }
-        std::cout << std::endl;
-    }
-}
-
-float Rectangle::area(float a, float b) {
-    return a * b;
-}
-
-void Rectangle::outerRectangle(float side, float side2, Color color) {
-    side = side + 2;
-    side2 = side * 2;
-    std::string colors = std::to_string(static_cast<int> (color) + 10);
-    for (int i = 0; i < side; ++i)
-    {
-        for (int j = 0; j < side2; ++j)
-        {
-            if ((i == 0 && j >= 0) || (i == side - 1 && j >= 0))
-            {
-                std::cout << "-";
-            }
-            else if (j == 0 || j == side2 - 1)
-            {
-                std::cout << "|";
-            }
-            else {
-                std::cout << "\x1b[" + colors + "m \x1b[0m";
-            }
-        }
-        std::cout << std::endl;
-    }
+double Rectangle::area()
+{
+    Shape::area();
+    double p = _sideA * _sideB;
+    std::cout << "Area rectangle: " << p << std::endl;
+    Shape::rectangleDraw(_sideA, _sideB, _color);
+    return p;
 }

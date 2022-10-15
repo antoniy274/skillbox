@@ -1,23 +1,19 @@
-// geometric_figures.cpp: определяет точку входа для приложения.
-//
+#include <iostream>
 #include "geometric_figures.h"
-
-using namespace std;
 
 int main()
 {
     std::string answer;
     do {
-        std::cout << "Enter name shape [circle] [square] [triangle] [rectangle] or exit: ";
+        std::cout << "Enter name shape [circle] [square] [triangle] [rectangle]: ";
         std::cin >> answer;
         if (answer == "circle")
         {
             double radius;
             std::cout << "Enter radius: ";
             std::cin >> radius;
-            Circle* shape = new Circle();
-            shape->outerRectangle(radius, RED);
-            std::cout << "Area = " << shape->area(radius);
+            Circle* shape = new Circle(radius, Shape::RED, 2, 4);
+            shape->area();
             delete shape;
         }
         else if (answer == "square")
@@ -25,9 +21,8 @@ int main()
             double side;
             std::cout << "Enter side: ";
             std::cin >> side;
-            Square* shape = new Square;
-            shape->outerRectangle(side, GREEN);
-            std::cout << "Area = " << shape->area(side);
+            Square* shape = new Square(side, Shape::GREEN, 15, 44);
+            shape->area();
             delete shape;
         }
         else if (answer == "triangle")
@@ -35,9 +30,8 @@ int main()
             double side;
             std::cout << "Enter side: ";
             std::cin >> side;
-            Triangle* shape = new Triangle;
-            shape->outerRectangle(side, BLUE);
-            std::cout << "Area = " << shape->area(side);
+            Triangle* shape = new Triangle(side, Shape::BLUE, 9, 58);
+            shape->area();
             delete shape;
 
         }
@@ -46,9 +40,7 @@ int main()
             double sideA, sideB;
             std::cout << "Enter side A and side B: ";
             std::cin >> sideA >> sideB;
-            Rectangle* shape = new Rectangle;
-            shape->outerRectangle(sideA, sideB, YELLOW);
-            std::cout << "Area = " << shape->area(sideA, sideB);
+            Rectangle* shape = new Rectangle(sideA, sideB, Shape::YELLOW, 100, 23.3);
             delete shape;
 
         }
