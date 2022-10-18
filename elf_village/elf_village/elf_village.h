@@ -42,6 +42,7 @@ public:
 
 class Forest
 {
+    House* _house = nullptr;
     //количество деревьев
     int _size{ 0 };
     //Указатель на массив деревьев
@@ -58,9 +59,9 @@ public:
     void findElf(const std::string& name);
 };
 
-class Branch : public House
+class Branch : House
 {
-    // House* _house = nullptr;
+    //House* _house = nullptr;
 public:
     Branch();
     ~Branch();
@@ -68,11 +69,11 @@ public:
 
 class Branch;
 
-class Bigbranch : public House
+class Bigbranch :House
 {
     int _colbranch{ 0 };
     Branch* _branch = nullptr;
-    //House* _house = nullptr;
+    House* _house = nullptr;
 public:
     Bigbranch();
     ~Bigbranch();

@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <iostream>
 #include <ctime>
-//#include <algorithm>
 
 
 House::House()
@@ -45,12 +44,10 @@ Bigbranch::Bigbranch()
 {
     _colbranch = 2 + rand() % 2;
     _branch = new Branch[_colbranch];
-    // _house = new House();
 }
 
 Bigbranch::~Bigbranch()
 {
-    //delete _house;
     delete[] _branch;
 }
 
@@ -79,6 +76,7 @@ Forest::~Forest()
 
 void Forest::setHouse()
 {
+    
     Address add;
     for (int tree = 0; tree < _size; ++tree)
     {
