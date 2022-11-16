@@ -63,5 +63,5 @@ void hundred_meters(double speed, std::string name) {
 	s += ((t - (int)t) * speed);
 	std::cout << name << " " << s << "\n";
 	std::pair<int, std::string> sw;
-	list_swimmer.insert(sw);
+	//list_swimmer.insert(sw);
 }
