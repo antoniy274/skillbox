@@ -1,0 +1,30 @@
+	std::string name;
+	int speed;
+	std::cout << "Enter swimming name: ";
+	std::cin >> name;
+	std::cout << "Enter swimming speed: ";
+	std::cin >> speed;
+	std::thread firstTrack(hundred_meters, speed, name);
+
+	std::cout << "Enter swimming name: ";
+	std::cin >> name;
+	std::cout << "Enter swimming speed: ";
+	std::cin >> speed;
+	std::thread secondTrack(hundred_meters, speed, name);
+
+	std::cout << "Enter swimming name: ";
+	std::cin >> name;
+	std::cout << "Enter swimming speed: ";
+	std::cin >> speed;
+	std::thread thirdTrack(hundred_meters, speed, name);
+
+	std::cout << "Enter swimming name: ";
+	std::cin >> name;
+	std::cout << "Enter swimming speed: ";
+	std::cin >> speed;
+	std::thread fourTrack(hundred_meters, speed, name);
+
+	firstTrack.join();
+	secondTrack.join();
+	thirdTrack.join();
+	fourTrack.join();
