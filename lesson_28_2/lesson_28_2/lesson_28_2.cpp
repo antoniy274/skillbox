@@ -9,6 +9,7 @@
 #define COMMAND_THREE "Departure from the station"
 
 std::mutex activitiesStation;
+std::mutex waitingCommand;
 void railwayStation(std::string name, int time);
 
 struct Train
@@ -45,8 +46,9 @@ void railwayStation(std::string name, int time) {
 	std::cout << name << " " << COMMAND_TWO << "\n";
 	activitiesStation.unlock();
 
+	// Можно ли это сделать без цикла?
 	std::string command;
-	activitiesStation.lock();
+	waitingCommand.lock();
 	std::cout << "Enter command (depart) to send: ";
 	while (std::cin>>command)
 	{
@@ -55,5 +57,5 @@ void railwayStation(std::string name, int time) {
 			break;
 		}
 	}
-	activitiesStation.unlock();
+	waitingCommand.unlock();
 }
