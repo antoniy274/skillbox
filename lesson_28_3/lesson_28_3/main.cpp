@@ -7,6 +7,8 @@
 std::mutex waitingCooking;
 std::mutex activitiesStation;
 
+
+
 void cooking();
 
 int main()
@@ -24,12 +26,13 @@ void cooking() {
         std::vector <std::string> cookingDish;
         std::this_thread::sleep_for(std::chrono::seconds(s));
         //тут вставка
+//-----------------------------------
         waitingCooking.lock();
         cookingDish.push_back(dish[std::rand() % 5]);
         std::cout << cookingDish.size() << " waiting cooking" << "\n";
         std::this_thread::sleep_for(std::chrono::seconds(std::rand() % 10 + 5));
         waitingCooking.unlock();
-
+//------------------------------------
         std::vector <std::string> readyMeal;
         //тут вставка
         readyMeal.insert(readyMeal.end(), cookingDish.begin(), cookingDish.end());
