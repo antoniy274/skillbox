@@ -1,8 +1,34 @@
-﻿// lesson29.1.h : включаемый файл для стандартных системных включаемых файлов
-// или включаемые файлы для конкретного проекта.
+﻿#pragma once
 
-#pragma once
+#include <vector>
 
-#include <iostream>
+class Talent 
+{
+protected:
+	virtual void swimming() = 0;
+	virtual void dancing() = 0;
+	virtual void counting() = 0;
 
-// TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.
+};
+
+class Dog : public Talent
+{
+private:
+	std::string name;
+	int age;
+	std::vector<Talent> talent;
+public:
+	Dog() {};
+	Dog(std::string m_name, int m_age = 0);
+	void voice();
+	void setName(std::string m_name);
+	void getName(std::string m_name);
+	void setAge(int m_age);
+	void getAge(int m_age);
+	
+	void show_talents();
+
+	void swimming();
+	void dancing();
+	void counting();
+};
