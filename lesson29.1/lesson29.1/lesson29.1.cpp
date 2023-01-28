@@ -47,21 +47,23 @@ void Dog::getAge(int m_age)
 	}
 }
 
+
 void Dog::show_talents()
 {
+
 }
 
-void Dog::swimming()
+void Swimming::swimming()
 {
-	std::cout << "It can “Swim”";
+	std::cout << "It can “Swim”" << std::endl;
 }
 
-void Dog::dancing()
+void Dancing::dancing()
 {
-	std::cout << "It can “Dance”";
+	std::cout << "It can “Dance”" << std::endl;
 }
 
-void Dog::counting()
+void Counting::counting()
 {
-	std::cout << age;
+
 }

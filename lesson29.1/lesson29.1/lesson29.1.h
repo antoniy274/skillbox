@@ -1,6 +1,8 @@
 ﻿#pragma once
 
 #include <vector>
+#include <string>
+
 
 class Talent 
 {
@@ -11,7 +13,19 @@ protected:
 
 };
 
-class Dog : public Talent
+class Swimming : public Talent {
+	void swimming();
+};
+
+class Dancing : public Talent {
+	void dancing();
+};
+
+class Counting : public Talent {
+	void counting();
+};
+
+class Dog: public Swimming, Dancing, Counting
 {
 private:
 	std::string name;
@@ -27,8 +41,4 @@ public:
 	void getAge(int m_age);
 	
 	void show_talents();
-
-	void swimming();
-	void dancing();
-	void counting();
 };
