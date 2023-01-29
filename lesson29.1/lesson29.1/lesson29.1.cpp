@@ -50,20 +50,40 @@ void Dog::getAge(int m_age)
 
 void Dog::show_talents()
 {
-
+	for (int i = 0; i < talent.size(); ++i) {
+		talent[i].print_talent();
+	}
 }
 
-void Swimming::swimming()
+void Dog::get_talents(std::string m_talent)
+{
+	Dancing dance;
+	Swimming swimming;
+	Counting counting;
+	if (m_talent == "dance") {
+		talent.push_back(dance);
+	}
+	else if (m_talent == "swim") {
+		talent.push_back(swimming);
+	}
+	else if (m_talent == "count") {
+		talent.push_back(counting);
+	}
+	else
+		std::cout << "Invalid talant";
+}
+
+void Swimming::print_talent()
 {
 	std::cout << "It can “Swim”" << std::endl;
 }
 
-void Dancing::dancing()
+void Dancing::print_talent()
 {
 	std::cout << "It can “Dance”" << std::endl;
 }
 
-void Counting::counting()
+void Counting::print_talent()
 {
-
+	std::cout << "It can “Count”" << std::endl;
 }

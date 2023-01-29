@@ -6,23 +6,20 @@
 
 class Talent 
 {
-protected:
-	virtual void swimming() = 0;
-	virtual void dancing() = 0;
-	virtual void counting() = 0;
-
+public:
+	virtual void print_talent() = 0;
 };
 
 class Swimming : public Talent {
-	void swimming();
+	void print_talent();
 };
 
 class Dancing : public Talent {
-	void dancing();
+	void print_talent();
 };
 
 class Counting : public Talent {
-	void counting();
+	void print_talent();
 };
 
 class Dog: public Swimming, Dancing, Counting
@@ -41,4 +38,5 @@ public:
 	void getAge(int m_age);
 	
 	void show_talents();
+	void get_talents(std::string m_talent);
 };
