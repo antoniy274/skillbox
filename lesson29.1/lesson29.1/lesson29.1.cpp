@@ -15,6 +15,13 @@ Dog::Dog(std::string m_name, int m_age)
 	}
 }
 
+Dog::~Dog()
+{
+	for (int i = 0; i < talents.size(); ++i) {
+		delete talents[i];
+	}
+}
+
 void Dog::voice()
 {
 	std::cout << "Bark";
@@ -50,40 +57,27 @@ void Dog::getAge(int m_age)
 
 void Dog::show_talents()
 {
-	for (int i = 0; i < talent.size(); ++i) {
-		talent[i].print_talent();
+	for (int i = 0; i < talents.size(); ++i) {
+		talents[i]->print_talent();
 	}
 }
 
-void Dog::get_talents(std::string m_talent)
+void Dog::add_talent(Talent* talent)
 {
-	Dancing dance;
-	Swimming swimming;
-	Counting counting;
-	if (m_talent == "dance") {
-		talent.push_back(dance);
-	}
-	else if (m_talent == "swim") {
-		talent.push_back(swimming);
-	}
-	else if (m_talent == "count") {
-		talent.push_back(counting);
-	}
-	else
-		std::cout << "Invalid talant";
+	talents.push_back(talent);
 }
 
 void Swimming::print_talent()
 {
-	std::cout << "It can “Swim”" << std::endl;
+	std::cout << "It can Swim" << std::endl;
 }
 
 void Dancing::print_talent()
 {
-	std::cout << "It can “Dance”" << std::endl;
+	std::cout << "It can Dance" << std::endl;
 }
 
 void Counting::print_talent()
 {
-	std::cout << "It can “Count”" << std::endl;
+	std::cout << "It can Count" << std::endl;
 }

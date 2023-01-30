@@ -4,16 +4,11 @@
 int main()
 {
 	Dog sharik("Sharik", 7);
-	int count;
-	std::cout << "Enter the number of abilities, if there are three at most";
-	std::cin >> count;
 
-	for (int i = 0; i < count; ++i) {
-		std::string text;
-		std::cout << "Enter the name of the ability from the list: swim, dance, count";
-		std::cin >> text;
-		sharik.get_talents(text);
-	}
+	std::cout << "Add your dog's talent" << std::endl;
 
+	Dancing* dance = new Dancing();
+
+	sharik.add_talent(dance);
 	sharik.show_talents();
 }

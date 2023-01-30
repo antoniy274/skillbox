@@ -11,26 +11,31 @@ public:
 };
 
 class Swimming : public Talent {
+public:
+	Swimming() {};
 	void print_talent();
 };
 
 class Dancing : public Talent {
+public:
 	void print_talent();
 };
 
 class Counting : public Talent {
+public:
 	void print_talent();
 };
 
-class Dog: public Swimming, Dancing, Counting
+class Dog
 {
 private:
 	std::string name;
 	int age;
-	std::vector<Talent> talent;
+	std::vector<Talent*> talents;
 public:
 	Dog() {};
 	Dog(std::string m_name, int m_age = 0);
+	~Dog();
 	void voice();
 	void setName(std::string m_name);
 	void getName(std::string m_name);
@@ -38,5 +43,5 @@ public:
 	void getAge(int m_age);
 	
 	void show_talents();
-	void get_talents(std::string m_talent);
+	void add_talent(Talent* talent);
 };
