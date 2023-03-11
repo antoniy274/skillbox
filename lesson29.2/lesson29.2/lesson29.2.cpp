@@ -7,35 +7,52 @@ double Circle::square(double R)
 	return pi * R * R;
 }
 
-void Circle::dimensions(double R)
+BoundingBoxDimensions Circle::dimensions()
 {
-	double length = 2 * R;
-	double width = 2 * R;
-	std::cout << "length: " << length << " width: " << width << "\n";
+	BoundingBoxDimensions result;
+	result.length = 2 * R;
+	result.width = 2 * R;
+	return result;
 }
 
-void Circle::type()
+std::string Circle::type()
 {
-	std::cout << "Circle";
+	return "Circle";
 }
 
-void Circle::printParams(Shape* shape)
-{
-	shape->type();
-	shape->square();
-	shape->dimensions();
-}
 
 double Rectangle::square()
 {
-	return 0.0;
+	return Length * Width;
 }
 
-void Rectangle::dimensions()
+BoundingBoxDimensions Rectangle::dimensions()
 {
+	BoundingBoxDimensions result;
+	result.length = Length;
+	result.width = Width;
+	return result;
 }
 
 std::string Rectangle::type()
 {
-	return std::string();
+	return "Rectangle";
+}
+
+double Triangle::square()
+{
+	return (Side * h) / 2;
+}
+
+BoundingBoxDimensions Triangle::dimensions()
+{
+	BoundingBoxDimensions result;
+	result.length = Side;
+	result.width = h;
+	return result;
+}
+
+std::string Triangle::type()
+{
+	return "Triangle";
 }
