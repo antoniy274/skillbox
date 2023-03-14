@@ -1,9 +1,14 @@
 #include "lesson29.2.h"
 
-using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
-	return 0;
+	Circle c{ 5 };
+	c.printParams(&c);
+
+	Rectangle r(2, 7);
+	r.printParams(&r);
+
+	Triangle t(5);
+	t.printParams(&t);
 }

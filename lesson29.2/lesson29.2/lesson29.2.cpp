@@ -2,7 +2,7 @@
 
 const double pi = 3.14;
 
-double Circle::square(double R)
+double Circle::square()
 {
 	return pi * R * R;
 }
@@ -10,7 +10,7 @@ double Circle::square(double R)
 BoundingBoxDimensions Circle::dimensions()
 {
 	BoundingBoxDimensions result;
-	result.length = 2 * R;
+	result.height = 2 * R;
 	result.width = 2 * R;
 	return result;
 }
@@ -20,17 +20,16 @@ std::string Circle::type()
 	return "Circle";
 }
 
-
 double Rectangle::square()
 {
-	return Length * Width;
+	return Height * Width;
 }
 
 BoundingBoxDimensions Rectangle::dimensions()
 {
 	BoundingBoxDimensions result;
-	result.length = Length;
 	result.width = Width;
+	result.height = Height;
 	return result;
 }
 
@@ -47,7 +46,7 @@ double Triangle::square()
 BoundingBoxDimensions Triangle::dimensions()
 {
 	BoundingBoxDimensions result;
-	result.length = Side;
+	result.height = Side;
 	result.width = h;
 	return result;
 }
