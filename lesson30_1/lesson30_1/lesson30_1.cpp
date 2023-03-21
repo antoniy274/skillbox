@@ -1,4 +1,7 @@
-﻿#include "lesson30.1.h"
+﻿// lesson30_1.cpp: определяет точку входа для приложения.
+//
+
+#include "lesson30_1.h"
 #include "iostream"
 #include "cpr/cpr.h"
 
