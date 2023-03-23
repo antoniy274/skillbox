@@ -1,6 +1,7 @@
 ﻿# CMakeList.txt: файл проекта CMake верхнего уровня; проведите глобальную конфигурацию
 # и включите сюда подпроекты.
-#
+
+set(CMAKE_CXX_STANDARD 17)
 cmake_minimum_required (VERSION 3.8)
 
 project ("lesson30_1")
