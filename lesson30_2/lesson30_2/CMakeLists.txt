@@ -8,4 +8,4 @@ cmake_minimum_required (VERSION 3.8)
 add_executable (lesson30_2 "lesson30_2.cpp" )
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
-target_link_libraries(lesson30_1 PRIVATE cpr::cpr)
+target_link_libraries(lesson30_2 PRIVATE cpr::cpr)
