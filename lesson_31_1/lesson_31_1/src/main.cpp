@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "shared_ptr_toy.h"
+#include "..\include\shared_ptr_toy.h"
 
 
 int main()

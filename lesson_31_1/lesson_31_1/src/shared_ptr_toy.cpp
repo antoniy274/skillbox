@@ -1,4 +1,4 @@
-#include "shared_ptr_toy.h"
+#include "..\include\shared_ptr_toy.h"
 
 void shared_ptr_toy::add_count() {
 	std::lock_guard<std::mutex> lg(m_ptr);
