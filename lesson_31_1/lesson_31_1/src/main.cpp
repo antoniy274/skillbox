@@ -14,7 +14,7 @@ int main()
         std::cout << "Count ptr: " << ptr.use_count() << " : " << ptr->get() << std::endl;
         shared_ptr_toy ptr3 = ptr;
         std::cout << "Count ptr: " << ptr.use_count() << " : " << ptr->get() << std::endl;
-        ptr4 = ptr3; // Для проверки освобождения памяти поменять местами ptr3=ptr4
+        ptr3 = ptr4; // Для проверки освобождения памяти поменять местами ptr3=ptr4
         std::cout << "Count ptr4: " << ptr4.use_count() << " : " << ptr4->get() << std::endl;
 
     }
