@@ -1,19 +1,16 @@
 #include "..\include\shared_ptr_toy.h"
 
 void shared_ptr_toy::add_count() {
-	std::lock_guard<std::mutex> lg(m_ptr);
 	if (count != nullptr)
 		*count += 1;
 }
 
 void shared_ptr_toy::reduce_count() {
-	std::lock_guard<std::mutex> lg(m_ptr);
 	if (count != nullptr)
 		*count -= 1;
 }
 
 int shared_ptr_toy::use_count() {
-	std::lock_guard<std::mutex> lg(m_ptr);
 	return*count;
 }
 

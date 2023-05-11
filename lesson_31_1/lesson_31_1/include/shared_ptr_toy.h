@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <mutex>
 
 class Toy
 {
@@ -22,7 +21,6 @@ class shared_ptr_toy {
 private:
     Toy* toy = nullptr;
     int* count = nullptr;
-    std::mutex m_ptr;
     void add_count();
     void reduce_count();
 public:
