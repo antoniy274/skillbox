@@ -9,7 +9,7 @@ void shared_ptr_toy::add_count() {
 void shared_ptr_toy::reduce_count() {
 	std::lock_guard<std::mutex> lg(m_ptr);
 	if (count != nullptr)
-		*count += 1;
+		*count -= 1;
 }
 
 int shared_ptr_toy::use_count() {
