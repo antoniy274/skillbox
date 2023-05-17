@@ -29,7 +29,7 @@ shared_ptr_toy& shared_ptr_toy::operator=(const shared_ptr_toy& oth)
 {
 	if (this == &oth)
 		return*this;
-	--* count;;
+	--* count;
 	if (use_count() == 0)
 	{
 		std::cout << "delete toy " << toy->get() << std::endl;
