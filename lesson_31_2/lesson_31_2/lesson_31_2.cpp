@@ -1,6 +1,7 @@
 ﻿#include <vector>
 #include <iostream>
 
+
 // 31.2
 
 class IGraph {
@@ -108,6 +109,18 @@ public:
             }
         }
     };
+
+    // доделать функцию
+    void ListGraph::ShowGraph() const
+    {
+        for (int i = 0; i < graphData.size(); ++i) {
+            std::cout << graphData[i] << ' ';
+            for (int j = 0; j < graphData[i].size(); ++j) {
+                std::cout << graphData[i].[j] << "";
+            }
+        }
+        std::cout << std::endl;
+    }
 };
 
 class MatrixGraph : public IGraph {
@@ -203,6 +216,7 @@ int main() {
     L.AddEdge(0, 2);
     L.GetNextVertices(2, someVector);
     L.GetPrevVertices(3, someVector);
+    
 
     M.AddEdge(0, 2);
     M.GetNextVertices(1, someVector);

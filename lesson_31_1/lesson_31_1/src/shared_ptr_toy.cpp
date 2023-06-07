@@ -16,20 +16,20 @@ int shared_ptr_toy::use_count() {
 
 shared_ptr_toy::shared_ptr_toy(Toy* toy) {
 	this->toy = toy;
-	*count = 1; //инициализируем счетчик
+	this->count = (nullptr == toy) ? new int(0) : new int(1); //инициализируем счетчик
 }
 
 shared_ptr_toy::shared_ptr_toy(const shared_ptr_toy& oth) {
 	this->toy = oth.toy;
 	this->count = oth.count;
-	++*count;
+	add_count();
 }
 
 shared_ptr_toy& shared_ptr_toy::operator=(const shared_ptr_toy& oth)
 {
 	if (this == &oth)
 		return*this;
-	--* count;
+	reduce_count();
 	if (use_count() == 0)
 	{
 		std::cout << "delete toy " << toy->get() << std::endl;
@@ -38,12 +38,12 @@ shared_ptr_toy& shared_ptr_toy::operator=(const shared_ptr_toy& oth)
 	}
 	toy = oth.toy;
 	count = oth.count;
-	++* count;
+	add_count();
 	return *this;
 }
 
 shared_ptr_toy::~shared_ptr_toy() {
-	--* count;
+	reduce_count();
 	if (use_count() == 0)
 	{
 		delete toy;
