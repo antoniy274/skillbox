@@ -12,5 +12,3 @@ set(JSON_BuildTests OFF CACHE INTERNAL "")
 add_subdirectory ("lesson_32_0")
 
 add_subdirectory("nlohmann_json")
-
-target_link_libraries(lesson_32_0 PRIVATE nlohmann_json::nlohmann_json)

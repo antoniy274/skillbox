@@ -1,18 +1,26 @@
 ﻿#include <iostream>
 #include <string>
 #include <fstream>
+#include "nlohmann/json.hpp"
+
 
 struct Record
 {
 	std::string name;
 	std::string family;
 	int age;
+	bool married;
 };
 
 int main()
 {
 	Record record;
-	std::cin >> record.name >> record.family >> record.age;
-	std::ofstream file("record.json");
-	file << "{" << "\"name\": \"" << record.name << "\", \"family\": \"" << record.family << "\"}" << std::endl;
+	std::ifstream file("record.json");
+	nlohmann::json dict;
+	file >> dict;
+	record.name = dict["name"];
+	record.family = dict["family"];
+	record.age = dict["age"];
+	record.married = dict["married"];
+	std::cout << record.name << " " << record.family << " " << record.age << " " << record.married << std::endl;
 }
