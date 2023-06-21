@@ -5,9 +5,6 @@ cmake_minimum_required (VERSION 3.8)
 
 project ("lesson_32_1")
 
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-
-
 # Включите подпроекты.
 add_subdirectory ("lesson_32_1")
 
