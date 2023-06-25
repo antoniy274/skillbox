@@ -6,6 +6,4 @@ cmake_minimum_required (VERSION 3.8)
 # Добавьте источник в исполняемый файл этого проекта.
 add_executable (lesson_32_2 "lesson_32_2.cpp" )
 
-set(JSON_BuildTests OFF CACHE INTERNAL "")
-
 target_link_libraries(lesson_32_2 PRIVATE nlohmann_json::nlohmann_json)

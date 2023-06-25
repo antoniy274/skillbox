@@ -1,0 +1,87 @@
+﻿{
+	"Guardians of the Galaxy Vol. 3": {
+		"Studio": "Marvel Studios",
+		"Director": "James Gunn",
+		"Writer": "James Gunn",
+		"Release date": "April 22, 2023",
+		"Country": "USA, New Zealand, France, Canada",
+		"Actors": {
+			"Chris Pratt": "Peter Quill",
+			"Chukwudi Iwuji": "The High Evolutionary",
+			"Bradley Cooper": "Rocket(voice)",
+			"Pom Klementieff": "Mantis",
+			"Dave Bautista": "Drax",
+			"Karen Gillan": "Nebula",
+			"Vin Diesel": "Groot(voice)"
+		}
+	},
+
+	"John Wick: Chapter 4": {
+		"Studio": "Lionsgate",
+		"Director": "Chad Stahelski",
+		"Writer": "Shay Hatten, Michael Finch, Derek Kolstad",
+		"Release date": "March 13, 2023",
+		"Country": "USA, Germany",
+		"Actors": {
+			"Keanu Reeves": "John Wick",
+			"Laurence Fishburne": "Bowery King",
+			"George Georgiou": "The Elder",
+			"Lance Reddick": "Charon",
+			"Clancy Brown": "Harbinger",
+			"Ian McShane": "Winston",
+			"Marko Zaror": "Chidi"
+		}
+	},
+
+	"Air": {
+		"Studio": "Amazon Prime Video",
+		"Director": "Ben Affleck",
+		"Writer": "Alex Convery",
+		"Release date": "March 18, 2023",
+		"Country": "USA",
+		"Actors": {
+			"Matt Damon": "Sonny Vaccaro",
+			"Jason Bateman": "Rob Strasser",
+			"Ben Affleck": "Phil Knight",
+			"Chris Messina": "David Falk",
+			"Viola Davis": "Deloris Jordan",
+			"Julius Tennon": "James Jordan",
+			"Damian Delano Young": "Michael Jordan"
+		}
+	},
+
+	"Guy Ritchie's The Covenant": {
+		"Studio": "Metro-Goldwyn-Mayer",
+		"Director": "Guy Ritchie",
+		"Writer": "Guy Ritchie, Ivan Atkinson, Marn Davies",
+		"Release date": "April 19, 2023",
+		"Country": "UK, Spain, USA",
+		"Actors": {
+			"Jake Gyllenhaal": "Master Sergeant John Kinley",
+			"Dar Salim": "Ahmed",
+			"Sean Sagar": "Charlie 'Jizzy' Crow",
+			"Jason Wong": "Joshua 'JJ' Jung",
+			"Rhys Yates": "Tom 'Tom Cat' Hancock",
+			"Christian Ochoa Lavernia": "Eduardo 'Chow Chow' Lopez",
+			"Bobby Schofield": "Steve Kersher"
+		}
+	},
+
+	"Sisu": {
+		"Studio": "Nordisk Film",
+		"Director": "Jalmari Helander",
+		"Writer": "Jalmari Helander",
+		"Release date": "September 9, 2022",
+		"Country": "Finland, UK",
+		"Actors": {
+			"Jorma Tommila": "Aatami",
+			"Aksel Hennie": "Bruno",
+			"Jack Doolan": "Wolf",
+			"Mimosa Willamo": "Aino",
+			"Onni Tommila": "Schütze",
+			"Tatu Sinisalo": "SS Soldier",
+			"Wilhelm Enckell": "SS Soldier",
+			"Vincent Willestrand": "SS Soldier"
+		}
+	}
+}
