@@ -38,7 +38,7 @@ void Registry<T1, T2>::remove(T1 first)
 	int s = 0;
 	while (s <= reg.size())
 	{
-		if (reg == first)
+		if (reg[s].key == first)
 		{
 			reg.erase(reg.begin() + s);
 		}
