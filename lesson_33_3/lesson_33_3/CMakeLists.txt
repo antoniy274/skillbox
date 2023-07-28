@@ -4,6 +4,6 @@
 cmake_minimum_required (VERSION 3.8)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (lesson_33_3 "Registry.cpp" "Registry.h" "main.cpp")
+add_executable (lesson_33_3  "Registry.h" "main.cpp")
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
