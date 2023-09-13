@@ -3,9 +3,9 @@
 ColorfulCircle::ColorfulCircle(QWidget *parent){
     setParent(parent);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    mGreenCirclePixmap = QPixmap(":\\green.png");
-    mYellowCirclePixmap = QPixmap(":\\yellow.png");
-    mRedCirclePixmap = QPixmap(":\\red.png");
+    mGreenCirclePixmap = QPixmap("..\\lesson_36\\green.png");
+    mYellowCirclePixmap = QPixmap("..\\lesson_36\\yellow.png");
+    mRedCirclePixmap = QPixmap("..\\lesson_36\\red.png");
     mCurrentCirclePixmap = mGreenCirclePixmap;
     setGeometry(mCurrentCirclePixmap.rect());
 }
